@@ -22,8 +22,6 @@ public class SwastikPattern {
 				else if(j==n-1 && i>n/2) {
 					System.out.print("* ");
 				}
-				
-				
 				else if(i==0 && j>n/2) {
 					System.out.print("* ");
 				}
