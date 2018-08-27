@@ -1,33 +1,31 @@
+/* Array must be sorted*/
 package com.nt.algorithm;
 
+import java.util.Arrays;
+
 public class BinarySearch {
-	public static int binarySearch(int[] arr, int n, int key) {
-		int l = 0;
-		int h = n;
-		int mid = 0;
+	public static boolean binarySearch(int[] arr, int key) {
+		Arrays.sort(arr);
+		int left = 0;
+		int right = arr.length - 1;
 
-		while (l <= h) {
-
-			if (arr[n - 1] == key) {
-				return n - 1;
-			}
-			mid = (l + h) / 2;
+		while (left <= right) {
+			int mid = left + ((right - left) / 2);
 			if (arr[mid] == key) {
-				return mid;
+				return true;
 			} else if (key < arr[mid]) {
-				h = mid - 1;
-			} else if (key > arr[mid]) {
-				l = mid + 1;
+				right = mid - 1;
+			} else {
+				left = mid + 1;
 			}
 		}
-		return 0;
+		return false;
 	}
 
 	public static void main(String[] args) {
-		int[] arr = { 1, 9, 51, 31, 145, 62 };
-		int key = 31;
-		int n = arr.length;
-		int index = binarySearch(arr, n, key);
+		int[] arr = { 11, 2, 3, 10, 5, 6, 7, 8, 9 };
+		int key = 2;
+		boolean index = binarySearch(arr, key);
 		System.out.println(index);
 	}
 }
