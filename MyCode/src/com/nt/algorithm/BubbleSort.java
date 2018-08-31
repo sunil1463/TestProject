@@ -14,7 +14,7 @@
  * 		10,20,30,40,50,60	
  * 
 */
-package com.nt.dataStrucure;
+package com.nt.algorithm;
 
 public class BubbleSort {
 
